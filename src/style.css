@@ -3,3 +3,18 @@
 body{
     background: white;
 }
+.propuesta{
+    color:blue;
+    text-shadow: 0 0 3px blue,
+                 0 0 8px blue;
+}
+.card-title {
+    color: red
+}
+.heart{
+    color:#ff2bd6;
+    text-shadow: 0 0 8px #ff2bd6,
+                 0 0 18px #ff2bd6;
+
+
+}
