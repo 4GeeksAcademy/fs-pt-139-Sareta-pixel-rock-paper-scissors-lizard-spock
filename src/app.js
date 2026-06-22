@@ -1,11 +1,11 @@
 //write your code here
 import "./style.css";
-const juego = (userChoice) =>{
-    const opcionUsuario = userChoice
+const game = (userChoice) =>{
+    const userOption = userChoice
     const pcChoice = ["Piedra", "Papel", "Tijeras", "Lagarto", "Spock"];
     const pcChoiceRandom = pcChoice[Math.floor(Math.random()*pcChoice.length)];
     console.log("ELECCIÓN DEL USUARIO " + userChoice, "ELECCIÓN DEL PC " + pcChoiceRandom);
-    const reglas = {
+    const rules = {
         Piedra: ["Tijeras", "Lagarto"],
         Papel: ["Piedra", "Spock"],
         Tijeras: ["Papel", "Lagarto"],
@@ -13,12 +13,12 @@ const juego = (userChoice) =>{
         Spock: ["Tijeras", "Piedra"]
     }
     
-    if (opcionUsuario === pcChoiceRandom){
-        document.getElementById("resultado").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Hay un empate 🤝";
-    } else if (reglas[opcionUsuario].includes(pcChoiceRandom)){
-        document.getElementById("resultado").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Has ganado!!! 🏆"
+    if (userOption === pcChoiceRandom){
+        document.getElementById("result").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Hay un empate 🤝";
+    } else if (rules[userOption].includes(pcChoiceRandom)){
+        document.getElementById("result").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Has ganado!!! 🏆"
     } else {
-        document.getElementById("resultado").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Zas!! En toda la boca!! 😬 "
+        document.getElementById("result").innerHTML = "La máquina ha elegido:🥁... " + pcChoiceRandom + "! Zas!! En toda la boca!! 😬 "
     }
     
     
@@ -26,20 +26,20 @@ const juego = (userChoice) =>{
 }
 
 
-juego("Tijeras")
+game("Tijeras")
 
 document.getElementById("Piedra").addEventListener("click", () => {
-    juego("Piedra");
+    game("Piedra");
 });
 document.getElementById("Papel").addEventListener("click", () => {
-    juego("Papel");
+    game("Papel");
 });
 document.getElementById("Tijeras").addEventListener("click", () => {
-    juego("Tijeras");
+    game("Tijeras");
 });
 document.getElementById("Lagarto").addEventListener("click", () => {
-    juego("Lagarto");
+    game("Lagarto");
 });
 document.getElementById("Spock").addEventListener("click", () => {
-    juego("Spock");
+    game("Spock");
 });
